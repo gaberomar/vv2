@@ -1,8 +1,7 @@
 ﻿
 
 
-
-<meta name="robots" content="noindex,nofollow"/>
+﻿<meta name="robots" content="noindex,nofollow"/>
 <html>
 <script>
 function getParam ( sname )
@@ -28,14 +27,19 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 <script src="https://unpkg.com/video.js/dist/video.js"></script>
 <script src="//cdn.dashjs.org/latest/dash.all.debug.js"></script>
 <script src="https://unpkg.com/videojs-contrib-dash/dist/videojs-dash.js"></script>
-   
-     <style>
-    body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{font-family:Verdana,Arial,Helvetica,sans-serif}
+    <script>
+function override(t){return t.indexOf("licensing.bitmovin.com/licensing")>-1?"data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==":t.indexOf("licensing.bitmovin.com/impression")>-1?"data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==":t}var open=XMLHttpRequest.prototype.open;function base64DecodeUint8Array(t){var e=window.atob(t),n=e.length,r=new Uint8Array(new ArrayBuffer(n));for(i=0;i<n;i++)r[i]=e.charCodeAt(i);return r}function ab2str(t){return String.fromCharCode.apply(null,new Uint8Array(t))}function _Base64(t){var e;if("string"==typeof t)e=t;else if(t instanceof ArrayBuffer)e=String.fromCharCode.apply(null,new Uint8Array(t));else{if(!(t instanceof Uint8Array))return"";e=String.fromCharCode.apply(null,t)}return window.btoa(e)}XMLHttpRequest.prototype.open=function(){var t=override(arguments[1]);return arguments[1]=t,open.apply(this,arguments)};const intercept=(t,e)=>{const n=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(r,i,...o){return i=i.replace(t,e),n.call(this,r,i,...o)}};intercept("http://","https://");
+    </script>
+    <style>
+    body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{font-family:Verdana,Arial,Helvetica,sans-serif}.player_div{width:500px;height:400px;position:relative;display:block;z-index:100}#Player{width:100%!important;height:100%!important}#error-message{color:transparent;width:100%;height:100%;background:#000;text-align:center;vertical-align:middle;background-size:contain;background-repeat:no-repeat;position:absolute;top:0;left:0;z-index:100;display:none}#error-message h2,#error-message p{font-weight:700;color:#fff;text-shadow:1px 1px #fff}#error-message h2{margin-top:15%;font-size:120%}#unmute{display:none;z-index:2147483647;color:#fff;position:absolute;bottom:60px;right:40px;width:200px;border:2px solid #fff;text-align:center;padding:4px 0;border-radius:2px;cursor:pointer;opacity:.8}#unmute:hover{opacity:1}
+    .bmpui-ui-watermark {display:none; left: 0; margin: 0;}
     </style>
 <body onload="init()">
 <div class="media">
 
+
 <video id="play" class="video-js vjs-big-play-centered skin-blue" autoplay="" playsinline="true" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" tabindex="2" mediatype="video" __idm_id__="897552385" controls preload="auto" data-setup="{}"></video>
+
 
 <script>
     function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest();xmlhttp.open("GET",link,!1);xmlhttp.send();src=xmlhttp.responseText}else src=link;player=videojs("play");player.ready(function(){player.src({src:src,type:"application/x-mpegURL"})});player.play()}
