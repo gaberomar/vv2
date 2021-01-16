@@ -25,6 +25,8 @@ var sv = getParam("sv");
   var player = videojs('player');
   player.src({ 
   src: sv,
+  parentId: '.player',
+  autoPlay: true,
   type: 'application/dash+xml',
  
  
