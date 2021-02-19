@@ -80,7 +80,12 @@ var sv = getParam("sv");
                                     });
                                     //var error = player.vjs.error();
                                 });
-                           	
+                           	function init() {
+			var i = 1;
+			play('');
+			setInterval(function() {reload(i); i++ }, 1000);
+		}
+		
 		
 	</script>
 
