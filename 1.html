@@ -1,12 +1,4 @@
 
-<meta charset="utf-8">
-<meta name="referrer" content="no-referrer">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://rawgit.com/hoclamwe/js/master/video-js.min.css" rel="stylesheet">
-<script src="https://rawgit.com/hoclamwe/js/master/videojs-ie8.min.js"></script>
-<script src="https://rawgit.com/hoclamwe/js/master/video.min.js"></script>
-<script src="https://rawgit.com/hoclamwe/js/master/videojs-contrib-hls.min.js"></script>
-<script src="https://rawgit.com/hoclamwe/js/master/vjs-hls.min.js"></script>
 <script>
 function getParam ( sname )
 {
@@ -18,10 +10,15 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
-
+<meta name="referrer" content="no-referrer">
+<style>html,body{margin:0;padding:0;background:#000;;}</style>
+<link href="https://rawgit.com/hoclamwe/js/master/video-js.min.css" rel="stylesheet">
+<script src="https://rawgit.com/hoclamwe/js/master/videojs-ie8.min.js"></script>
+<script src="https://rawgit.com/hoclamwe/js/master/video.min.js"></script>
+<script src="https://rawgit.com/hoclamwe/js/master/videojs-contrib-hls.min.js"></script>
+<script src="https://rawgit.com/hoclamwe/js/master/vjs-hls.min.js"></script>
 <body onload="init()">
 
-	<div id="streaming"></div>
 		<video id="streaming" autoplay preload="auto"  height="100%" width="100%" class="video-js" controls data-setup='{"language": "vi"}'></video>
 	
 	<script>
@@ -59,7 +56,8 @@ var sv = getParam("sv");
 		
 		
 	</script>
-
+<div id="videojs">
+</div>
 <style>
 	.video-js {
 		width: 100%;
